@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcfqkcg3xf5rt"]
+
+[ext_resource type="PackedScene" uid="uid://clcavc0feho5b" path="res://mods/Menus/Menus.tscn" id="1_fc2v7"]
+
+[node name="Menus" instance=ExtResource("1_fc2v7")]
+
+[node name="Title" parent="ColorRect" index="0"]
+text = "Game Over"

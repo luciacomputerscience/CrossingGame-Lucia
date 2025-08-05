@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7fjr6hun4c8y"]
+
+[ext_resource type="Script" uid="uid://736x3obx20b1" path="res://mods/Goal/goal.gd" id="1_tjooy"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qbnu2"]
+radius = 1.49
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbnu2"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ot5dj"]
+
+[node name="Goal" type="Node3D"]
+script = ExtResource("1_tjooy")
+
+[node name="DetectPlayer" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectPlayer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.548595, 0)
+shape = SubResource("SphereShape3D_qbnu2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.571982, 0)
+material_override = SubResource("StandardMaterial3D_qbnu2")
+mesh = SubResource("BoxMesh_ot5dj")
+skeleton = NodePath("")
+
+[connection signal="body_entered" from="DetectPlayer" to="." method="_on_detect_player_body_entered"]

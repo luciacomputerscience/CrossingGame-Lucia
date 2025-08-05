@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://chs18bkajga48"]
+
+[ext_resource type="PackedScene" uid="uid://clcavc0feho5b" path="res://mods/Menus/Menus.tscn" id="1_id5k6"]
+
+[node name="Menus" instance=ExtResource("1_id5k6")]
+
+[node name="Title" parent="ColorRect" index="0"]
+text = "Winner!"

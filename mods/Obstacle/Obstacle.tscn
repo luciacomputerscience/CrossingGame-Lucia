@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxocxc0vobk0y"]
+
+[ext_resource type="Script" uid="uid://dpy8j766gmswh" path="res://mods/Obstacle/obstacle.gd" id="1_qbnu2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0jfvi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbnu2"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ot5dj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qbnu2"]
+radius = 0.9
+
+[node name="Obstacle" type="CharacterBody3D" groups=["obstacle"]]
+script = ExtResource("1_qbnu2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.571982, 0)
+shape = SubResource("BoxShape3D_0jfvi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+material_override = SubResource("StandardMaterial3D_qbnu2")
+mesh = SubResource("BoxMesh_ot5dj")
+
+[node name="DetectPlayer" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectPlayer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.548595, 0)
+shape = SubResource("SphereShape3D_qbnu2")
+
+[connection signal="body_entered" from="DetectPlayer" to="." method="_on_detect_player_body_entered"]

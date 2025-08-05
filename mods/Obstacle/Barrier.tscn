@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfdbqh8iyac01"]
+
+[ext_resource type="Script" uid="uid://do5xef3sro7vv" path="res://mods/Obstacle/barrier.gd" id="1_jkbc2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dy8iu"]
+size = Vector3(1, 1, 58.52)
+
+[node name="Barrier" type="Area3D"]
+script = ExtResource("1_jkbc2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_dy8iu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

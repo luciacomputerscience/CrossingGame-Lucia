@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsd5ryo08r5y2"]
+
+[ext_resource type="PackedScene" uid="uid://cetp0q74kufkx" path="res://mods/GameUI/GameUI.tscn" id="1_4qtxj"]
+[ext_resource type="PackedScene" uid="uid://ly1d64vmw5fe" path="res://mods/World/World.tscn" id="1_rm8q3"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rm8q3"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Game" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameUi" parent="CanvasLayer/Control" instance=ExtResource("1_4qtxj")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 20.065
+anchor_right = 28.825
+anchor_bottom = 16.075
+offset_left = -802.6
+
+[node name="Screen" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 20.061
+anchor_bottom = 16.14
+offset_right = 0.559937
+offset_bottom = 3.39996
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_rm8q3")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="World" parent="SubViewport" instance=ExtResource("1_rm8q3")]
