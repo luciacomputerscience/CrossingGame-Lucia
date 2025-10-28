@@ -1,11 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://ly1d64vmw5fe"]
+[gd_scene load_steps=10 format=3 uid="uid://ly1d64vmw5fe"]
 
-[ext_resource type="PackedScene" uid="uid://dj1tpxjdn5ofd" path="res://mods/Player/Player.tscn" id="1_trl3l"]
-[ext_resource type="PackedScene" uid="uid://bxocxc0vobk0y" path="res://mods/Obstacle/Obstacle.tscn" id="2_p68a7"]
-[ext_resource type="PackedScene" uid="uid://b7fjr6hun4c8y" path="res://mods/Goal/Goal.tscn" id="3_cecy5"]
-[ext_resource type="PackedScene" uid="uid://dfdbqh8iyac01" path="res://mods/Obstacle/Barrier.tscn" id="4_ex7he"]
+[ext_resource type="Texture2D" uid="uid://deg3y3kvgs5rc" path="res://6226caebc0114.jpg" id="1_o14yy"]
+[ext_resource type="PackedScene" uid="uid://dj1tpxjdn5ofd" path="res://mods/Player/Player.tscn" id="2_04mge"]
+[ext_resource type="PackedScene" uid="uid://bxocxc0vobk0y" path="res://mods/Obstacle/Obstacle.tscn" id="3_eue43"]
+[ext_resource type="PackedScene" uid="uid://b7fjr6hun4c8y" path="res://mods/Goal/Goal.tscn" id="4_cf1t6"]
+[ext_resource type="PackedScene" uid="uid://dfdbqh8iyac01" path="res://mods/Obstacle/Barrier.tscn" id="5_4sj48"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p68a7"]
+albedo_texture = ExtResource("1_o14yy")
+uv1_scale = Vector3(-41.65, -41.65, -41.65)
 
 [sub_resource type="BoxMesh" id="BoxMesh_fex23"]
 size = Vector3(77.655, 1, 30)
@@ -30,16 +33,16 @@ shape = SubResource("BoxShape3D_p68a7")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.886648, 0.462445, 0, -0.462445, 0.886648, 0, 4.54045, 17.2419)
 
-[node name="Player" parent="." instance=ExtResource("1_trl3l")]
+[node name="Player" parent="." instance=ExtResource("2_04mge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.104, 0, 8.26462)
 
-[node name="Obstacle" parent="." instance=ExtResource("2_p68a7")]
+[node name="Obstacle" parent="." instance=ExtResource("3_eue43")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.25782, 0, -7.21044)
 
-[node name="Obstacle2" parent="." instance=ExtResource("2_p68a7")]
+[node name="Obstacle2" parent="." instance=ExtResource("3_eue43")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.25782, 0, -1.53958)
 
-[node name="Obstacle3" parent="." instance=ExtResource("2_p68a7")]
+[node name="Obstacle3" parent="." instance=ExtResource("3_eue43")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.25782, 0, 5.40493)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -48,13 +51,13 @@ environment = SubResource("Environment_p68a7")
 [node name="Sun" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 0.308419, 0.95125, 0, -0.95125, 0.308419, 0, 6.70504, 0)
 
-[node name="Goal" parent="." instance=ExtResource("3_cecy5")]
+[node name="Goal" parent="." instance=ExtResource("4_cf1t6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.477812, 0.104844, -13.1723)
 
-[node name="Barrier" parent="." instance=ExtResource("4_ex7he")]
+[node name="Barrier" parent="." instance=ExtResource("5_4sj48")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5234, 0.904346, 1.15489)
 
-[node name="Barrier2" parent="." instance=ExtResource("4_ex7he")]
+[node name="Barrier2" parent="." instance=ExtResource("5_4sj48")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2927, 0.904346, 1.15489)
 
 [editable path="Goal"]

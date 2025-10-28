@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bsd5ryo08r5y2"]
 
 [ext_resource type="PackedScene" uid="uid://cetp0q74kufkx" path="res://mods/GameUI/GameUI.tscn" id="1_4qtxj"]
-[ext_resource type="PackedScene" uid="uid://ly1d64vmw5fe" path="res://mods/World/World.tscn" id="1_rm8q3"]
+[ext_resource type="PackedScene" uid="uid://ly1d64vmw5fe" path="res://World/World.tscn" id="1_rm8q3"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_rm8q3"]
 viewport_path = NodePath("SubViewport")

@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 run/main_scene="uid://clcavc0feho5b"
-config/features=PackedStringArray("4.4")
+config/features=PackedStringArray("4.5")
 
 [dotnet]
 
 project/assembly_name="CrossingGame"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

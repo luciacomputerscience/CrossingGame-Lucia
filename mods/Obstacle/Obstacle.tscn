@@ -1,11 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxocxc0vobk0y"]
+[gd_scene load_steps=7 format=3 uid="uid://bxocxc0vobk0y"]
 
 [ext_resource type="Script" uid="uid://dpy8j766gmswh" path="res://mods/Obstacle/obstacle.gd" id="1_qbnu2"]
+[ext_resource type="Texture2D" uid="uid://dt6ffw2xgnvro" path="res://rotten-gums-zombie-mask.jpg" id="2_ot5dj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0jfvi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbnu2"]
-albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("2_ot5dj")
+emission_enabled = true
+emission_energy_multiplier = 2.3
+uv1_scale = Vector3(1.72, 1.72, 1.72)
+uv1_offset = Vector3(-0.825, 0.075, 0)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ot5dj"]
 
